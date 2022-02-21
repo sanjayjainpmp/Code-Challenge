@@ -1,0 +1,34 @@
+## CCC-Jr-2008-J2  'Do the Shuffle' 
+# Playlist, initially, holds 5 songs in as A,B,C,D,E and 4 buttons 1,2,3,4
+'''
+Button 1: move the first song of the playlist to the end of the playlist.
+For example: “A, B, C, D, E” will change to “B, C, D, E, A”.
+Button 2: move the last song of the playlist to the start of the playlist.
+For example, “A, B, C, D, E” will change to “E, A, B, C, D”.
+Button 3: swap the first two songs of the playlist.
+For example, “A, B, C, D, E” will change to “B, A, C, D, E”.
+Button 4: stop rearranging songs and output the playlist.'''
+# Input: 1. b -> button number 91 to 4)   2. n -> number of times press the button (1 to 10)
+
+playlist = ['A','B','C','D','E']
+b = int(input("Enter button number: "))
+n = int(input("Enter number of times, button is pressed: "))
+
+if n in range(1,11):
+    for i in range(n):
+        if b in range(1,5):
+            if b == 1:
+                temp = playlist.pop(0) # pop() remove the element at index 0, and returns
+                playlist.append(temp) # insert the removed element in the last
+            elif b == 2:
+                temp = playlist.pop()
+                playlist.insert(0,temp)
+            elif b == 3:
+                playlist[0:2] = reversed(playlist[0:2])
+            else:
+                break
+        else:
+            print("Enter valid button number (1 to 4")
+else:
+    print("Enter valid range of number of times (1 to 10")
+print(playlist)
