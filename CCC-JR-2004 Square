@@ -1,0 +1,18 @@
+'''Write a program that asks the userfor the number of tiles and then prints out the
+maximum side length. You may assume that the user will only type integers that are less
+than ten thousand. Once your program has read the user’s input and printed the largest
+square, your program stops executing.'''
+# Input
+tiles = int(input("Enter number of tiles: "))
+# Processing
+side = 1
+for s in range(1,101):
+    sqr = s * s
+    if sqr <= tiles:
+        if (sqr == tiles):
+            side = s
+        else:
+            side = s
+# Output         
+print("The largest square has side length ", side)
+
